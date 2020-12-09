@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Text;
+using System.Windows.Forms;
 
 namespace Checkers {
     class Piece {
@@ -23,17 +24,27 @@ namespace Checkers {
 
             List<Move> checkMoves = new List<Move>();
 
-            if (buttonNum % 8 != 1 && color == Color.Brown || king) checkMoves.Add(new Move(this, buttonNum - 9));
-            if (buttonNum % 8 != 0 && color == Color.Brown || king) checkMoves.Add(new Move(this, buttonNum - 7));
+            if (buttonNum % 8 != 1 && (color == Color.Brown || king)) checkMoves.Add(new Move(this, buttonNum - 9));
+            if (buttonNum % 8 != 0 && (color == Color.Brown || king)) checkMoves.Add(new Move(this, buttonNum - 7));
 
-            if (buttonNum % 8 != 1 && color == Color.Wheat || king) checkMoves.Add(new Move(this, buttonNum + 7));
-            if (buttonNum % 8 != 0 && color == Color.Wheat || king) checkMoves.Add(new Move(this, buttonNum + 9));
+            if (buttonNum % 8 != 1 && (color == Color.Wheat || king)) checkMoves.Add(new Move(this, buttonNum + 7));
+            if (buttonNum % 8 != 0 && (color == Color.Wheat || king)) checkMoves.Add(new Move(this, buttonNum + 9));
 
 
             // Check that those moves are possible
             foreach (Move move in checkMoves) {
                 int num = move.moveTo;
                 bool canMove = num > 0 && num < 65;
+
+                // First check the move is possible by checking that the space isn't white.
+                if (canMove) {
+                    Button button = (Button) Form1.ActiveForm.Controls.Find("button"+num, true)[0];
+                    Console.WriteLine(num);
+                    Console.WriteLine(button.BackColor.Name);
+                    if (button.BackColor == Color.White) {
+                        canMove = false;
+                    }
+                }
 
                 foreach (Piece piece in pieces) {
                     if (!canMove) break;
@@ -51,6 +62,15 @@ namespace Checkers {
 
 
                             if (beyond <= 0 || beyond >= 65) {
+                                canMove = false;
+                                break;
+                            }
+
+
+                            Button button = (Button)Form1.ActiveForm.Controls.Find("button" + beyond, true)[0];
+                            Console.WriteLine(beyond);
+                            Console.WriteLine(button.BackColor.Name);
+                            if (button.BackColor == Color.White) {
                                 canMove = false;
                                 break;
                             }

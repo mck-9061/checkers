@@ -145,6 +145,7 @@ namespace Checkers {
                     int buttonNum = Convert.ToInt32(control.Name.Split("n")[1]);
                     if (buttonNum % 2 != 0 && !even) control.BackColor = Color.Green;
                     else if (buttonNum % 2 == 0 && even) control.BackColor = Color.Green;
+                    else control.BackColor = Color.White;
                 }
             }
         }
