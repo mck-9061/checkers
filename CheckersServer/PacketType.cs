@@ -9,6 +9,7 @@ namespace CheckersServer {
         ERROR,
         END,
         MOVELIST,
-        REMOVE
+        REMOVE,
+        KING
     }
 }

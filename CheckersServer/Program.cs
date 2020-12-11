@@ -42,19 +42,19 @@ namespace CheckersServer {
                 // For example, if the server sent the client a "MOVE-23-34" packet, the client would move the piece in slot 23 to slot 34.
                 // See packets.md for full packet documentation.
 
-
-                Packet packet = new Packet(p1, PacketType.PLAYER, "-one");
+                
+                Packet packet = new Packet(p1, PacketType.PLAYER, "-1");
                 packet.Send();
                 Console.WriteLine("Sent player-one to Player 1");
 
-                Packet packet2 = new Packet(p2, PacketType.PLAYER, "-two");
+                Packet packet2 = new Packet(p2, PacketType.PLAYER, "-2");
                 packet2.Send();
                 Console.WriteLine("Sent player-two to Player 2");
-        
                 
-                listener.Stop();
 
                 handler = new GameHandler();
+
+                handler.run();
                 PacketListener p1listener = new PacketListener(p1);
                 PacketListener p2listener = new PacketListener(p2);
 
@@ -62,6 +62,18 @@ namespace CheckersServer {
                 p1listener.beginListening();
                 p2listener.beginListening();
 
+                while (true) {
+                    Console.ReadKey();
+
+                    // Testing purposes. Sending packets to a player to see if they will work.
+                    Packet testPacket = new Packet(p1, PacketType.MOVE, "-2-25");
+                    testPacket.Send();
+
+                    Packet testPacket2 = new Packet(p2, PacketType.MOVE, "-2-25");
+                    testPacket2.Send();
+
+                    Console.WriteLine("Packets sent");
+                }
             }
             catch (Exception e) {
                 Console.WriteLine(e.StackTrace);

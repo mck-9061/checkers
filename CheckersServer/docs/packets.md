@@ -38,6 +38,12 @@ Remove a piece from play.
 Info:
 
 	-[piece]: The piece number to remove.
+### KING
+Kings a piece.
+
+Info:
+
+	-[piece]: The piece to king.
 
 ## Client-server packets
 Packets that the client sends to the server.

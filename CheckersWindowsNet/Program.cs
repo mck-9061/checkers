@@ -16,6 +16,7 @@ namespace CheckersWindowsNet {
         /// </summary>
         [STAThread]
         static void Main() {
+            int player = 0;
             try {
                 client = new TcpClient();
                 Console.WriteLine("Connecting......");
@@ -36,8 +37,10 @@ namespace CheckersWindowsNet {
 
                 Console.WriteLine(received);
 
+                player = Convert.ToInt32(received.Split("-")[1]);
+
             } catch (Exception e) {
-                Console.WriteLine(e.StackTrace);
+                MessageBox.Show(e.StackTrace);
                 Console.WriteLine("There might not be a server running.");
             }
 
@@ -46,7 +49,7 @@ namespace CheckersWindowsNet {
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new Form1(player));
         }
     }
 }

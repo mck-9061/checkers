@@ -30,9 +30,15 @@ namespace CheckersServer {
                 for (int i = 0; i < k; i++) received += (Convert.ToChar(buffer[i]));
                 string[] args = received.Split("-");
 
-                if (args[0] == "CLICK") {
-                    Color color = Color.FromName(args[2]);
-                    Program.handler.handleClick(Convert.ToInt32(args[1]), color, Convert.ToInt32(args[3]));
+                Console.WriteLine($"Received a packet from {socket.LocalEndPoint}: {received}");
+
+                try {
+                    if (args[0] == "CLICK") {
+                        Color color = Color.FromName(args[2]);
+                        Program.handler.handleClick(Convert.ToInt32(args[1]), color, Convert.ToInt32(args[3]));
+                    }
+                } catch (Exception e) {
+                    Console.WriteLine(e.StackTrace);
                 }
             }
         }

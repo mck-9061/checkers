@@ -63,89 +63,138 @@ namespace CheckersServer.CheckersGame {
 
 
         public void handleClick(int player, Color color, int clicked) {
-            // Make sure the correct player is clicking.
+            try {
 
-            if (player != playerTurn) {
-                Socket socket = null;
-                if (player == 1) socket = Program.p2;
-                else socket = Program.p1;
+                // Make sure the correct player is clicking.
+
+                if (player != playerTurn) {
+                    Socket socket = null;
+                    if (player == 1) socket = Program.p2;
+                    else socket = Program.p1;
 
 
-                Packet error = new Packet(socket, PacketType.ERROR, "-1");
-                error.Send();
-                return;
+                    Packet error = new Packet(socket, PacketType.ERROR, "-1");
+                    error.Send();
+                    Console.WriteLine("Error packet sent");
+                    return;
+                }
+
+
+                if ((color == Color.Brown && playerTurn == 1) ||
+                    (color == Color.Wheat && playerTurn == 2)) {
+                    int num = clicked;
+
+                    Piece piece = null;
+                    Console.WriteLine(num);
+                    foreach (Piece p in pieces) {
+                        Console.WriteLine(p.buttonNum);
+                        if (p.buttonNum == num) {
+                            piece = p;
+                            break;
+                        }
+                    }
+
+                    if (piece == null) {
+                        Console.WriteLine("Piece is null");
+                        return;
+                    }
+                    Console.WriteLine("Piece isn't null");
+
+                    string options = "-";
+
+                    foreach (Move move in piece.getMoves(pieces)) {
+                        options += move.moveTo + "-";
+                    }
+
+                    Console.WriteLine(options);
+
+                    Socket socket = null;
+                    if (player == 1) socket = Program.p1;
+                    else socket = Program.p2;
+
+                    Packet packet = new Packet(socket, PacketType.MOVELIST, options);
+                    packet.Send();
+                    Console.WriteLine("Movelist sent");
+
+                    aboutToMove = piece;
+
+                }
+                else if (color == Color.Green) {
+                    Socket socket = null;
+                    if (player == 1) socket = Program.p1;
+                    else socket = Program.p2;
+
+                    if (aboutToMove == null) {
+                        Console.WriteLine("No packet sent; empty space clicked without picking piece to move");
+                        return;
+                    }
+
+                    Piece piece = aboutToMove;
+                    int num = clicked;
+
+                    // Check for any captured pieces
+                    Move move = null;
+                    foreach (Move m in piece.getMoves(pieces)) {
+                        if (m.moveTo == num) {
+                            move = m;
+                            break;
+                        }
+                    }
+
+                    if (move.piecesTaken.Count != 0) {
+                        Piece taken = move.piecesTaken[0];
+                        pieces.Remove(taken);
+
+
+
+                        Packet packet = new Packet(socket, PacketType.REMOVE, "-" + taken.buttonNum);
+                        Console.WriteLine("Remove packet sent");
+
+
+                        if (playerTurn == 1) brownTaken++;
+                        else if (playerTurn == 2) whiteTaken++;
+                    }
+
+
+                    // Check if the piece should be kinged
+                    bool king = false;
+                    if (piece.color == Color.Brown && num < 9 && !piece.king) king = true;
+                    if (piece.color == Color.Wheat && num > 56 && !piece.king) king = true;
+
+
+                    if (king) {
+                        piece.king = true;
+                        Packet kingPacket = new Packet(socket, PacketType.KING, "-" + piece.buttonNum);
+                        Console.WriteLine("King packet sent");
+                    }
+
+
+
+                    // Move the piece
+                    Packet movePacket = new Packet(socket, PacketType.MOVE, $"-{piece.buttonNum}-{num}");
+                    movePacket.Send();
+
+
+                    Socket socket2 = null;
+                    if (player == 1) socket2 = Program.p2;
+                    else socket2 = Program.p1;
+
+                    Packet movePacket2 = new Packet(socket2, PacketType.MOVE, $"-{piece.buttonNum}-{num}");
+                    movePacket2.Send();
+
+                    Console.WriteLine("Move packet sent");
+
+
+                    piece.buttonNum = num;
+
+                    if (playerTurn == 1) playerTurn = 2;
+                    else playerTurn = 1;
+                    aboutToMove = null;
+                }
             }
-
-
-            if ((color == Color.Brown && playerTurn == 1) ||
-                (color == Color.Wheat && playerTurn == 2)) {
-                int num = clicked;
-
-                Piece piece = null;
-                foreach (Piece p in pieces) {
-                    if (p.buttonNum == num) {
-                        piece = p;
-                        break;
-                    }
-                }
-
-                if (piece == null) return;
-
-                string options = "";
-
-                foreach (Move move in piece.getMoves(pieces)) {
-                    options += move.moveTo+",";
-                }
-
-                Socket socket = null;
-                if (player == 1) socket = Program.p1;
-                else socket = Program.p2;
-
-                Packet packet = new Packet(socket, PacketType.MOVELIST, options);
-                packet.Send();
-                aboutToMove = piece;
-
-            } else if (color == Color.Green) {
-                Socket socket = null;
-                if (player == 1) socket = Program.p1;
-                else socket = Program.p2;
-
-
-                Piece piece = aboutToMove;
-                int num = clicked;
-
-                // Check for any captured pieces
-                Move move = null;
-                foreach (Move m in piece.getMoves(pieces)) {
-                    if (m.moveTo == num) {
-                        move = m;
-                        break;
-                    }
-                }
-
-                if (move.piecesTaken.Count != 0) {
-                    Piece taken = move.piecesTaken[0];
-                    pieces.Remove(taken);
-
-                    
-
-                    Packet packet = new Packet(socket, PacketType.REMOVE, "-"+taken.buttonNum);
-
-                    if (playerTurn == 1) brownTaken++;
-                    else if (playerTurn == 2) whiteTaken++;
-                }
-
-
-                // Check if the piece should be kinged
-                if (piece.color == Color.Brown && num < 9) piece.king = true;
-                if (piece.color == Color.Wheat && num > 56) piece.king = true;
-
-
-                // Move the piece
-                Packet movePacket = new Packet(socket, PacketType.MOVE, $"-{piece.buttonNum}-{num}");
-                movePacket.Send();
-
-                piece.buttonNum = num;
+            catch (Exception e) {
+                Console.WriteLine(e.StackTrace);
+                return;
             }
         }
     }
