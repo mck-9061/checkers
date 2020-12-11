@@ -46,7 +46,8 @@ Tells the server that the client has clicked a space.
 
 Info:
 
-	-[space]: The space that the client clicked.
+	-[space]: The space number that the client clicked.
+	-[color]: The color of the space the client clicked.
 ### SKIP
 Tells the server to skip their turn.
 ### CONCEDE

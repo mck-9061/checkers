@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Drawing;
 
-namespace Checkers {
+namespace CheckersServer {
     class Piece {
         public Color color { get; set; }
         public int buttonNum { get; set; }
