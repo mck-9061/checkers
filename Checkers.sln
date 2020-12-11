@@ -9,6 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CheckersServer", "CheckersS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CheckersAndroid", "CheckersAndroid\CheckersAndroid.csproj", "{F99495C9-2A38-4133-A9BD-43DFF93C8CD4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CheckersWindowsNet", "CheckersWindowsNet\CheckersWindowsNet.csproj", "{DACD21AD-5921-41D4-842A-F899633ADB02}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C9D98D14-FFF9-4E4A-8C14-7C13B7DC2EFF} = {C9D98D14-FFF9-4E4A-8C14-7C13B7DC2EFF}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +34,10 @@ Global
 		{F99495C9-2A38-4133-A9BD-43DFF93C8CD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F99495C9-2A38-4133-A9BD-43DFF93C8CD4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F99495C9-2A38-4133-A9BD-43DFF93C8CD4}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{DACD21AD-5921-41D4-842A-F899633ADB02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DACD21AD-5921-41D4-842A-F899633ADB02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DACD21AD-5921-41D4-842A-F899633ADB02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DACD21AD-5921-41D4-842A-F899633ADB02}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

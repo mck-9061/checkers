@@ -94,7 +94,7 @@ namespace CheckersServer.CheckersGame {
                 string options = "";
 
                 foreach (Move move in piece.getMoves(pieces)) {
-                    options += move.moveTo;
+                    options += move.moveTo+",";
                 }
 
                 Socket socket = null;

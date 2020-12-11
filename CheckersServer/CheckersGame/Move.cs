@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace CheckersServer {
-    class Move {
+    public class Move {
         public Piece moving { get; set; }
         public int moveTo { get; set; }
         public List<Piece> piecesTaken { get; set; }

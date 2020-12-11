@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Net;
 using System.Net.Sockets;
+using System.Runtime.CompilerServices;
 using System.Text;
+using CheckersServer.CheckersGame;
 
 namespace CheckersServer {
     class Program {
@@ -12,6 +14,7 @@ namespace CheckersServer {
 
         public static Socket p1 { get; set; }
         public static Socket p2 { get; set; }
+        public static GameHandler handler { get; set; }
 
         static void Main(string[] args) {
             try {
@@ -50,7 +53,15 @@ namespace CheckersServer {
         
                 
                 listener.Stop();
-            
+
+                handler = new GameHandler();
+                PacketListener p1listener = new PacketListener(p1);
+                PacketListener p2listener = new PacketListener(p2);
+
+
+                p1listener.beginListening();
+                p2listener.beginListening();
+
             }
             catch (Exception e) {
                 Console.WriteLine(e.StackTrace);

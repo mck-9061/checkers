@@ -2,7 +2,7 @@
 using System.Drawing;
 
 namespace CheckersServer {
-    class Piece {
+    public class Piece {
         public Color color { get; set; }
         public int buttonNum { get; set; }
         public bool captured { get; set; }
