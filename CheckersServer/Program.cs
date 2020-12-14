@@ -18,7 +18,7 @@ namespace CheckersServer {
 
         static void Main(string[] args) {
             try {
-                IPAddress ip = IPAddress.Parse("192.168.1.106");
+                IPAddress ip = IPAddress.Parse("192.168.0.105");
                 
                 TcpListener listener = new TcpListener(ip,8001);
 
