@@ -1,0 +1,14 @@
+E:\projects\Checkers\CheckersMobile2\CheckersMobile2\obj\Debug\netstandard2.0\CheckersMobile2.csprojAssemblyReference.cache
+E:\projects\Checkers\CheckersMobile2\CheckersMobile2\obj\Debug\netstandard2.0\App.xaml.g.cs
+E:\projects\Checkers\CheckersMobile2\CheckersMobile2\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+E:\projects\Checkers\CheckersMobile2\CheckersMobile2\obj\Debug\netstandard2.0\CheckersMobile2.AssemblyInfoInputs.cache
+E:\projects\Checkers\CheckersMobile2\CheckersMobile2\obj\Debug\netstandard2.0\CheckersMobile2.AssemblyInfo.cs
+E:\projects\Checkers\CheckersMobile2\CheckersMobile2\obj\Debug\netstandard2.0\CheckersMobile2.csproj.CoreCompileInputs.cache
+E:\projects\Checkers\CheckersMobile2\CheckersMobile2\bin\Debug\netstandard2.0\CheckersMobile2.deps.json
+E:\projects\Checkers\CheckersMobile2\CheckersMobile2\bin\Debug\netstandard2.0\CheckersMobile2.dll
+E:\projects\Checkers\CheckersMobile2\CheckersMobile2\bin\Debug\netstandard2.0\ref\CheckersMobile2.dll
+E:\projects\Checkers\CheckersMobile2\CheckersMobile2\bin\Debug\netstandard2.0\CheckersMobile2.pdb
+E:\projects\Checkers\CheckersMobile2\CheckersMobile2\obj\Debug\netstandard2.0\XamlC.stamp
+E:\projects\Checkers\CheckersMobile2\CheckersMobile2\obj\Debug\netstandard2.0\CheckersMobile2.dll
+E:\projects\Checkers\CheckersMobile2\CheckersMobile2\obj\Debug\netstandard2.0\ref\CheckersMobile2.dll
+E:\projects\Checkers\CheckersMobile2\CheckersMobile2\obj\Debug\netstandard2.0\CheckersMobile2.pdb

@@ -8,23 +8,23 @@
     ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
-    "C:\\Users\\Nathaniel Carter\\.nuget\\packages\\": {},
+    "C:\\Users\\20228788\\.nuget\\packages\\": {},
     "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\projects\\Checkers\\Checkers\\Checkers.csproj",
+      "projectUniqueName": "D:\\projects\\Checkers\\Checkers\\Checkers.csproj",
       "projectName": "Checkers",
-      "projectPath": "E:\\projects\\Checkers\\Checkers\\Checkers.csproj",
-      "packagesPath": "C:\\Users\\Nathaniel Carter\\.nuget\\packages\\",
-      "outputPath": "E:\\projects\\Checkers\\Checkers\\obj\\",
+      "projectPath": "D:\\projects\\Checkers\\Checkers\\Checkers.csproj",
+      "packagesPath": "C:\\Users\\20228788\\.nuget\\packages\\",
+      "outputPath": "D:\\projects\\Checkers\\Checkers\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\Nathaniel Carter\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\20228788\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -37,7 +37,6 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
           "projectReferences": {}
         }
       },
@@ -49,7 +48,6 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
-        "targetAlias": "netcoreapp3.1",
         "imports": [
           "net461",
           "net462",
@@ -68,7 +66,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
       }
     }
   }

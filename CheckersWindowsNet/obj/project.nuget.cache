@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "VLO2OA5Fq9+MBTR7tSUb16auHEODQZL8stRdhKYXWFpHWW7udGVSweJqz1jqGhvBFHV8kpTOIMzB8dYR6pGnqQ==",
+  "dgSpecHash": "uBmjg+V9geLhKf/JwqsCzIXvb5ACqXi4HGnWXFayui2paKERJLFzW/qaoUcWPcipCD0PO7AQSpq4wYL8UOBq3w==",
   "success": true,
-  "projectFilePath": "E:\\projects\\Checkers\\CheckersWindowsNet\\CheckersWindowsNet.csproj",
+  "projectFilePath": "D:\\projects\\Checkers\\CheckersWindowsNet\\CheckersWindowsNet.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

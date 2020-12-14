@@ -69,8 +69,8 @@ namespace CheckersServer.CheckersGame {
 
                 if (player != playerTurn) {
                     Socket socket = null;
-                    if (player == 1) socket = Program.p2;
-                    else socket = Program.p1;
+                    if (player == 1) socket = Program.p1;
+                    else socket = Program.p2;
 
 
                     Packet error = new Packet(socket, PacketType.ERROR, "-1");
@@ -124,6 +124,10 @@ namespace CheckersServer.CheckersGame {
                     if (player == 1) socket = Program.p1;
                     else socket = Program.p2;
 
+                    Socket socket2 = null;
+                    if (player == 1) socket2 = Program.p2;
+                    else socket2 = Program.p1;
+
                     if (aboutToMove == null) {
                         Console.WriteLine("No packet sent; empty space clicked without picking piece to move");
                         return;
@@ -148,6 +152,10 @@ namespace CheckersServer.CheckersGame {
 
 
                         Packet packet = new Packet(socket, PacketType.REMOVE, "-" + taken.buttonNum);
+                        packet.Send();
+
+                        Packet packet2 = new Packet(socket2, PacketType.REMOVE, "-" + taken.buttonNum);
+                        packet2.Send();
                         Console.WriteLine("Remove packet sent");
 
 
@@ -165,6 +173,10 @@ namespace CheckersServer.CheckersGame {
                     if (king) {
                         piece.king = true;
                         Packet kingPacket = new Packet(socket, PacketType.KING, "-" + piece.buttonNum);
+                        kingPacket.Send();
+
+                        Packet kingPacket2 = new Packet(socket2, PacketType.KING, "-" + piece.buttonNum);
+                        kingPacket2.Send();
                         Console.WriteLine("King packet sent");
                     }
 
@@ -174,10 +186,6 @@ namespace CheckersServer.CheckersGame {
                     Packet movePacket = new Packet(socket, PacketType.MOVE, $"-{piece.buttonNum}-{num}");
                     movePacket.Send();
 
-
-                    Socket socket2 = null;
-                    if (player == 1) socket2 = Program.p2;
-                    else socket2 = Program.p1;
 
                     Packet movePacket2 = new Packet(socket2, PacketType.MOVE, $"-{piece.buttonNum}-{num}");
                     movePacket2.Send();

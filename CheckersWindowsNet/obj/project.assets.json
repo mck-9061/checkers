@@ -27,23 +27,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Nathaniel Carter\\.nuget\\packages\\": {},
+    "C:\\Users\\20228788\\.nuget\\packages\\": {},
     "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\projects\\Checkers\\CheckersWindowsNet\\CheckersWindowsNet.csproj",
+      "projectUniqueName": "D:\\projects\\Checkers\\CheckersWindowsNet\\CheckersWindowsNet.csproj",
       "projectName": "CheckersWindowsNet",
-      "projectPath": "E:\\projects\\Checkers\\CheckersWindowsNet\\CheckersWindowsNet.csproj",
-      "packagesPath": "C:\\Users\\Nathaniel Carter\\.nuget\\packages\\",
-      "outputPath": "E:\\projects\\Checkers\\CheckersWindowsNet\\obj\\",
+      "projectPath": "D:\\projects\\Checkers\\CheckersWindowsNet\\CheckersWindowsNet.csproj",
+      "packagesPath": "C:\\Users\\20228788\\.nuget\\packages\\",
+      "outputPath": "D:\\projects\\Checkers\\CheckersWindowsNet\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\Nathaniel Carter\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\20228788\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -56,10 +56,9 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "E:\\projects\\Checkers\\CheckersServer\\CheckersServer.csproj": {
-              "projectPath": "E:\\projects\\Checkers\\CheckersServer\\CheckersServer.csproj"
+            "D:\\projects\\Checkers\\CheckersServer\\CheckersServer.csproj": {
+              "projectPath": "D:\\projects\\Checkers\\CheckersServer\\CheckersServer.csproj"
             }
           }
         }
@@ -72,7 +71,6 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
-        "targetAlias": "netcoreapp3.1",
         "imports": [
           "net461",
           "net462",
@@ -91,7 +89,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
       }
     }
   }

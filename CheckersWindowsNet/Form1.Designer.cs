@@ -89,9 +89,6 @@ namespace CheckersWindowsNet {
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.button65 = new System.Windows.Forms.Button();
             this.button66 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
@@ -764,37 +761,6 @@ namespace CheckersWindowsNet {
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(791, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(197, 32);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "It is Brown\'s turn.";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(791, 74);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(241, 17);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "White has captured 0 of Brown\'s pieces.";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(791, 97);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(241, 17);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Brown has captured 0 of White\'s pieces.";
-            // 
             // button65
             // 
             this.button65.Location = new System.Drawing.Point(821, 142);
@@ -820,15 +786,11 @@ namespace CheckersWindowsNet {
             this.ClientSize = new System.Drawing.Size(1041, 761);
             this.Controls.Add(this.button66);
             this.Controls.Add(this.button65);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "Form1";
             this.Text = "Draughts";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -899,9 +861,6 @@ namespace CheckersWindowsNet {
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button65;
         private System.Windows.Forms.Button button66;
     }

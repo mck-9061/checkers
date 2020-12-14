@@ -82,6 +82,8 @@ namespace CheckersWindowsNet {
                         onKing(Convert.ToInt32(args[1]));
                         break;
                 }
+
+                Application.DoEvents();
             }
         }
 
@@ -199,10 +201,14 @@ namespace CheckersWindowsNet {
             Button remove = null;
 
             foreach (Button button in tableLayoutPanel1.Controls) {
+
                 if (button.Name.Split("n")[1] == Convert.ToString(r)) remove = button;
             }
 
-            if (remove == null) return;
+            if (remove == null) {
+                MessageBox.Show("null");
+                return;
+            }
 
             remove.BackColor = Color.Green;
             remove.Text = "";
