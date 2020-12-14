@@ -28,6 +28,8 @@ jobs:
     - name: Android
       run: |
         cd CheckersMobile2
+        cd CheckersMobile2
         nuget restore
+        cd ..
         cd CheckersMobile2.Android
         msbuild CheckersMobile2.Android.csproj /verbosity:normal /t:Rebuild /p:Configuration=Debug
