@@ -3,7 +3,18 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30225.117
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Checkers", "Checkers\Checkers.csproj", "{D666E78A-D66F-4DC4-B473-96C1B1F3ABCB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Checkers", "Checkers\Checkers.csproj", "{D666E78A-D66F-4DC4-B473-96C1B1F3ABCB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CheckersServer", "CheckersServer\CheckersServer.csproj", "{C9D98D14-FFF9-4E4A-8C14-7C13B7DC2EFF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CheckersWindowsNet", "CheckersWindowsNet\CheckersWindowsNet.csproj", "{DACD21AD-5921-41D4-842A-F899633ADB02}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C9D98D14-FFF9-4E4A-8C14-7C13B7DC2EFF} = {C9D98D14-FFF9-4E4A-8C14-7C13B7DC2EFF}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CheckersMobile2.Android", "CheckersMobile2\CheckersMobile2.Android\CheckersMobile2.Android.csproj", "{F91E6591-A7A3-45D3-B5A6-C1DDC742E25F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CheckersMobile2", "CheckersMobile2\CheckersMobile2\CheckersMobile2.csproj", "{16B72B9A-8D74-4ADE-9ECD-4BA06CF8B24D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +26,24 @@ Global
 		{D666E78A-D66F-4DC4-B473-96C1B1F3ABCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D666E78A-D66F-4DC4-B473-96C1B1F3ABCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D666E78A-D66F-4DC4-B473-96C1B1F3ABCB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9D98D14-FFF9-4E4A-8C14-7C13B7DC2EFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9D98D14-FFF9-4E4A-8C14-7C13B7DC2EFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9D98D14-FFF9-4E4A-8C14-7C13B7DC2EFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9D98D14-FFF9-4E4A-8C14-7C13B7DC2EFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DACD21AD-5921-41D4-842A-F899633ADB02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DACD21AD-5921-41D4-842A-F899633ADB02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DACD21AD-5921-41D4-842A-F899633ADB02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DACD21AD-5921-41D4-842A-F899633ADB02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F91E6591-A7A3-45D3-B5A6-C1DDC742E25F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F91E6591-A7A3-45D3-B5A6-C1DDC742E25F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F91E6591-A7A3-45D3-B5A6-C1DDC742E25F}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{F91E6591-A7A3-45D3-B5A6-C1DDC742E25F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F91E6591-A7A3-45D3-B5A6-C1DDC742E25F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F91E6591-A7A3-45D3-B5A6-C1DDC742E25F}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{16B72B9A-8D74-4ADE-9ECD-4BA06CF8B24D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16B72B9A-8D74-4ADE-9ECD-4BA06CF8B24D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16B72B9A-8D74-4ADE-9ECD-4BA06CF8B24D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16B72B9A-8D74-4ADE-9ECD-4BA06CF8B24D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "F0IzZhsFjChqeXdglS46aYNAnQNEPzmXTMMIuAekFsbMkZjGoH6k3lQPQXBs1+eHLIRgAzdpcLTD4zOb0FNgLw==",
+  "success": true,
+  "projectFilePath": "D:\\projects\\Checkers\\Checkers\\Checkers.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\20228788\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x86\\3.1.5\\microsoft.netcore.app.runtime.win-x86.3.1.5.nupkg.sha512",
+    "C:\\Users\\20228788\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x86\\3.1.5\\microsoft.windowsdesktop.app.runtime.win-x86.3.1.5.nupkg.sha512",
+    "C:\\Users\\20228788\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x86\\3.1.5\\microsoft.aspnetcore.app.runtime.win-x86.3.1.5.nupkg.sha512"
+  ],
+  "logs": []
+}

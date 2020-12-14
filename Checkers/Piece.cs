@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Drawing;
-using System.Text;
-using System.Windows.Forms;
 
 namespace Checkers {
     class Piece {
@@ -36,15 +33,6 @@ namespace Checkers {
                 int num = move.moveTo;
                 bool canMove = num > 0 && num < 65;
 
-                // First check the move is possible by checking that the space isn't white.
-                if (canMove) {
-                    Button button = (Button) Form1.ActiveForm.Controls.Find("button"+num, true)[0];
-                    Console.WriteLine(num);
-                    Console.WriteLine(button.BackColor.Name);
-                    if (button.BackColor == Color.White) {
-                        canMove = false;
-                    }
-                }
 
                 foreach (Piece piece in pieces) {
                     if (!canMove) break;
@@ -66,16 +54,8 @@ namespace Checkers {
                                 break;
                             }
 
+                            bool canMove2 = !(piece.buttonNum % 8 == 0 || piece.buttonNum % 8 == 1);
 
-                            Button button = (Button)Form1.ActiveForm.Controls.Find("button" + beyond, true)[0];
-                            Console.WriteLine(beyond);
-                            Console.WriteLine(button.BackColor.Name);
-                            if (button.BackColor == Color.White) {
-                                canMove = false;
-                                break;
-                            }
-
-                            bool canMove2 = true;
 
                             foreach (Piece piece2 in pieces) {
                                 if (piece2.buttonNum == beyond) {
