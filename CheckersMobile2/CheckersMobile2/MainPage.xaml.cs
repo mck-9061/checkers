@@ -64,7 +64,7 @@ namespace CheckersMobile2 {
                 client = new TcpClient();
                 Console.WriteLine("Connecting......");
 
-                client.Connect("192.168.1.106", 8001);
+                client.Connect("192.168.0.105", 8001);
                 // use the ipaddress as in the server program
 
                 info.Text = "Connected. Wait for second player.";
